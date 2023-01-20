@@ -18,7 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = UIWindow(windowScene: windowScene)
         
         let router = Router()
-        let articleService = ArticleServiceImp(router: router)
+        let mapper = MapperImp()
+        let articleService = ArticleServiceImp(router: router, mapper: mapper)
         self.window?.rootViewController = ViewController(articleService: articleService)
         
         self.window?.makeKeyAndVisible()

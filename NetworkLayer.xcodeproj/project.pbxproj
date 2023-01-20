@@ -27,6 +27,7 @@
 		3757DE2529787D980049F0AA /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3757DE2429787D980049F0AA /* NetworkManager.swift */; };
 		3757DE2829787E7D0049F0AA /* ArticleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3757DE2729787E7D0049F0AA /* ArticleResponse.swift */; };
 		3757DE2A29787EA60049F0AA /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3757DE2929787EA60049F0AA /* Article.swift */; };
+		37DE1401297AC66B0074CF53 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37DE1400297AC66B0074CF53 /* Mapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		3757DE2429787D980049F0AA /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		3757DE2729787E7D0049F0AA /* ArticleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleResponse.swift; sourceTree = "<group>"; };
 		3757DE2929787EA60049F0AA /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		37DE1400297AC66B0074CF53 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		3757DE0629786D770049F0AA /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				37DE13FF297AC65B0074CF53 /* Mapper */,
 				3757DE2329787D910049F0AA /* Manager */,
 				3757DE1C297875EF0049F0AA /* Router */,
 				3757DE11297870A60049F0AA /* Encoding */,
@@ -203,6 +206,14 @@
 				3757DE2929787EA60049F0AA /* Article.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		37DE13FF297AC65B0074CF53 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				37DE1400297AC66B0074CF53 /* Mapper.swift */,
+			);
+			path = Mapper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,6 +304,7 @@
 				3757DE17297872A10049F0AA /* URLParameterEncoder.swift in Sources */,
 				3757DE2229787D260049F0AA /* NetworkEnvironment.swift in Sources */,
 				3757DDF029786C1C0049F0AA /* SceneDelegate.swift in Sources */,
+				37DE1401297AC66B0074CF53 /* Mapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

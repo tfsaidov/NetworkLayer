@@ -25,8 +25,13 @@ enum NetworkRouterError: Error {
         case other(description: String)
     }
     
-    case requestError(RequestError)
-    case serverError(ServerError)
+    enum NetworkParserError {
+        case parse(reason: String)
+    }
+    
+    case request(RequestError)
+    case server(ServerError)
+    case parser(NetworkParserError)
 }
 
 protocol NetworkRouter: AnyObject {
@@ -45,19 +50,19 @@ class Router: NetworkRouter {
             let request = try self.buildRequest(from: endPoint)
             self.task = URLSession.shared.dataTask(with: request, completionHandler: { data, responce, error in
                 if let error = error {
-                    completion(.failure(.serverError(.other(description: error.localizedDescription))))
+                    completion(.failure(.server(.other(description: error.localizedDescription))))
                     return
                 }
                 
                 guard let data = data else {
-                    completion(.failure(.serverError(.internalServerError)))
+                    completion(.failure(.server(.internalServerError)))
                     return
                 }
                 
                 completion(.success(data))
             })
         } catch {
-            completion(.failure(.requestError(.other(description: error.localizedDescription))))
+            completion(.failure(.request(.other(description: error.localizedDescription))))
         }
         
         self.task?.resume()
