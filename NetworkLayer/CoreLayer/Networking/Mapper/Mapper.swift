@@ -10,12 +10,13 @@ import Foundation
 typealias MapperCompletion<T: Decodable> = (Result<T, NetworkRouterError>) -> Void
 
 protocol Mapper {
+    /// Парсинг бинарных данных в заданный тип.
     func parse<T: Decodable>(_ type: T.Type,
                              from data: Data,
                              completion: @escaping MapperCompletion<T>)
 }
 
-class MapperImp {
+final class MapperImp {
     
     private let parsingQueue = DispatchQueue.global(qos: .background)
     private let mainQueue = DispatchQueue.main

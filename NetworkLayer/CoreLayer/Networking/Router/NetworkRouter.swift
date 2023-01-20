@@ -41,7 +41,7 @@ protocol NetworkRouter: AnyObject {
     func cancel()
 }
 
-class Router: NetworkRouter {
+final class Router: NetworkRouter {
     
     private var task: URLSessionTask?
     
